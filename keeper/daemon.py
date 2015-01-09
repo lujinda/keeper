@@ -2,7 +2,7 @@
 #coding:utf8
 # Author          : tuxpy
 # Email           : q8886888@qq.com
-# Last modified   : 2015-01-09 22:46:58
+# Last modified   : 2015-01-09 23:00:43
 # Filename        : keeper/daemon.py
 import sys
 import os
@@ -20,4 +20,5 @@ class Daemon():
     def run(self):
         child = subprocess.Popen(self.command, shell=True, stdin = self.stdin,
                 stdout = self.stdout, stderr = self.stderr)
+        child.wait()
 
