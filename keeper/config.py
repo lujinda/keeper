@@ -2,7 +2,7 @@
 #coding:utf8
 # Author          : tuxpy
 # Email           : q8886888@qq.com
-# Last modified   : 2015-01-09 22:58:25
+# Last modified   : 2015-02-05 19:47:16
 # Filename        : keeper/config.py
 # Description     : 
 import ConfigParser, os
@@ -18,6 +18,7 @@ def get_program_list():
         cfg.read(f)
         for section in cfg.sections():
             program = dict(cfg.items(section))
+            program['name'] = section
             program_list.append(program)
 
         return program_list
