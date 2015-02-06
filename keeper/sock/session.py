@@ -2,7 +2,7 @@
 #coding:utf8
 # Author          : tuxpy
 # Email           : q8886888@qq.com
-# Last modified   : 2015-02-06 15:29:35
+# Last modified   : 2015-02-06 15:35:26
 # Filename        : keeper/sock/session.py
 # Description     : 
 from keeper.worker import Worker
@@ -44,7 +44,6 @@ class Session():
         if self._worker_list[No].task_status == 'STOP':
             worker = self._worker_list.pop(No)
             new_worker = Worker(worker.program)
-            print new_worker
             self._worker_list.insert(No, new_worker)
             new_worker.start()
         self.write_line('Ok')
